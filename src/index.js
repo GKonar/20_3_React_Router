@@ -1,22 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store from './store';
 import DevTools from './DevTools';
 import { getCountries } from './actions/actions-countries'
-import Navigation from './presentational/navigation.component';
+import routes from './routes';
 
 // DODAWANIE PROVIDERA
 
 render(
     <Provider store={store}>
     	<div>
-    		<Router history={hashHistory}>
-        	    <Route path='/' component={Navigation}>
-	
-        	    </Route>
-        	</Router>
+    		<Router history={hashHistory} routes={routes}/>
         	<DevTools />
         </div>
     </Provider>,
