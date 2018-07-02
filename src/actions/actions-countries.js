@@ -1,4 +1,7 @@
 //	TYPY AKCJI
+// AKCJE w aplikacji reduxowej stanowią swoistą dokumentację projektu. Często wystarczy spojrzeć w opisujący
+// je plik, aby dowiedzieć się jakie funkcjonalności oferuje aplikacja. 
+
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'; //listowanie wszystkich dostępnych państw
 export const GET_COUNTRY = 'GET_COUNTRY'; //wyświetlanie informacji o jednym państwie
@@ -7,6 +10,11 @@ export const SEARCH_COUNTRIES = 'SEARCH_COUNTRIES'; //szukanie państwa po nazwi
 export const SET_CONTINENT = 'SET_CONTINENT'; //wyświetlanie państw konkretnego kontynentu
 
 //	KREATORY AKCJI
+
+// Stworzenie kreatorów akcji. Każdej z akcji przysługuje dokładnie jeden kreator. 
+// W innym wypadku, gdy chcemy zmienić stan store'a używając metody dispatch, trzeba za każdym razem ręcznie 
+// tworzyć obiekt, który przekażemy jako parametr tej metody. Przypominam, że kreatory to funkcje, 
+// które tworzą ten obiekt za nas. Wystarczy jedynie przekazać metodzie dispatch odpowiedni kreator.
 
 export const getCountries = () => {
     return {
