@@ -11,12 +11,14 @@ import Navigation from './presentational/navigation.component';
 
 render(
     <Provider store={store}>
-    	<Router history={hashHistory}>
-            <Route path='/' component={Navigation}>
-
-            </Route>
-        </Router>
-        <DevTools />
+    	<div>
+    		<Router history={hashHistory}>
+        	    <Route path='/' component={Navigation}>
+	
+        	    </Route>
+        	</Router>
+        	<DevTools />
+        </div>
     </Provider>,
     document.getElementById('root')
 );
